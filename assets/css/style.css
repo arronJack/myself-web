@@ -303,6 +303,117 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
   .r-header .contacts { text-align: left; }
 }
 
+/* =========================================================
+   动态视觉效果（克制、专业，符合简历形象）
+   ========================================================= */
+@property --ang { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+
+/* 顶部滚动进度条 */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+  background: var(--grad); z-index: 60; transition: width .12s linear;
+  box-shadow: 0 0 8px rgba(91,91,240,.5);
+}
+
+/* Hero 背景：漂浮光斑 + 细网格 */
+.hero-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.hero-bg .blob { position: absolute; border-radius: 50%; opacity: .55; filter: blur(8px); }
+.hero-bg .b1 { width: 480px; height: 480px; left: -140px; top: -150px;
+  background: radial-gradient(circle, rgba(91,91,240,.55), transparent 70%); animation: float1 15s ease-in-out infinite; }
+.hero-bg .b2 { width: 440px; height: 440px; right: -120px; top: -80px;
+  background: radial-gradient(circle, rgba(18,194,194,.5), transparent 70%); animation: float2 19s ease-in-out infinite; }
+.hero-bg .b3 { width: 380px; height: 380px; right: 16%; bottom: -180px;
+  background: radial-gradient(circle, rgba(255,122,89,.42), transparent 70%); animation: float3 17s ease-in-out infinite; }
+.hero-bg .grid { position: absolute; inset: -2px; opacity: .5;
+  background-image:
+    linear-gradient(rgba(91,91,240,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91,91,240,.07) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: radial-gradient(72% 60% at 50% 0%, #000 25%, transparent 80%);
+          mask-image: radial-gradient(72% 60% at 50% 0%, #000 25%, transparent 80%);
+  animation: gridmove 22s linear infinite; }
+
+/* 指针跟随光晕（由 JS 写入 --mx/--my） */
+.hero::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%),
+              rgba(91,91,240,.16), transparent 60%);
+  transition: background .2s ease;
+}
+.hero-grid { position: relative; z-index: 1; }
+
+@keyframes float1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(40px,30px)} }
+@keyframes float2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-36px,26px)} }
+@keyframes float3 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(28px,-34px)} }
+@keyframes gridmove { to { background-position: 46px 46px; } }
+
+/* 文字轮换 */
+.rotator { margin-top: 18px; font-size: 15px; color: var(--text-soft); min-height: 22px; }
+.rotator .rk { color: var(--accent); font-weight: 600; }
+
+/* 头像卡：旋转渐变描边 */
+.avatar-card { position: relative; }
+.avatar-card::before {
+  content: ""; position: absolute; inset: -1px; border-radius: inherit; padding: 1px;
+  background: conic-gradient(from var(--ang), var(--accent), var(--accent-2), var(--accent-3), var(--accent));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  animation: spin 9s linear infinite; pointer-events: none;
+}
+@keyframes spin { to { --ang: 360deg; } }
+
+/* 时间线节点脉动 */
+.tl-item::before { animation: tlpulse 2.6s ease-out infinite; }
+@keyframes tlpulse {
+  0%   { box-shadow: 0 0 0 0 rgba(91,91,240,.35); }
+  70%  { box-shadow: 0 0 0 12px rgba(91,91,240,0); }
+  100% { box-shadow: 0 0 0 0 rgba(91,91,240,0); }
+}
+
+/* 卡片入场：z 轴微抬 + 渐显（reveal 已处理位移，这里加错落延迟由 JS 注入） */
+.card, .post, .avatar-card { will-change: transform; }
+
+/* 专栏卡片 */
+.column-card {
+  display: flex; gap: 16px; align-items: flex-start; background: var(--bg-card);
+  border: 1px solid var(--border); border-radius: var(--radius); padding: 22px;
+  transition: .25s; box-shadow: var(--shadow-sm);
+}
+.column-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: color-mix(in srgb, var(--accent) 30%, var(--border)); }
+.column-card .cicon {
+  width: 46px; height: 46px; flex: none; border-radius: 12px; background: var(--grad-soft);
+  display: grid; place-items: center; font-size: 22px; border: 1px solid var(--border);
+}
+.column-card h3 { font-size: 17px; margin-bottom: 4px; }
+.column-card .cmeta { font-size: 12.5px; color: var(--text-muted); font-family: var(--mono); margin-bottom: 6px; }
+.column-card p { font-size: 14px; color: var(--text-soft); }
+.column-card .more { display: inline-block; margin-top: 10px; color: var(--accent); font-weight: 600; font-size: 13.5px; }
+.columns-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+/* 联系信息网格（替换纯二维码） */
+.contact-info { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 4px 0 22px; }
+.contact-chip {
+  display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.28); color: #fff; padding: 9px 15px; border-radius: 999px;
+  font-size: 13.5px; font-weight: 600; transition: .2s;
+}
+.contact-chip:hover { background: rgba(255,255,255,.26); }
+.contact-chip a { color: #fff; }
+.contact-chip .k { opacity: .8; font-weight: 500; }
+
+/* 头像卡里的联系标签 */
+.meta .wx { color: var(--accent) !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg .blob, .hero-bg .grid, .avatar-card::before, .tl-item::before { animation: none !important; }
+  .hero::after { display: none; }
+}
+
+/* 打印时隐藏动效层 */
+@media print {
+  .scroll-progress, .hero-bg, .hero::after { display: none !important; }
+}
+
 /* 打印优化 */
 @media print {
   @page { size: A4; margin: 14mm; }

@@ -29,8 +29,13 @@
     </div>
   </nav>
 
+  <div class="scroll-progress" id="scrollProgress"></div>
+
   <!-- Hero -->
   <header class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="grid"></span>
+    </div>
     <div class="wrap hero-grid">
       <div>
         <span class="eyebrow">● 可接新机会 · 全栈 / AI 产品</span>
@@ -44,10 +49,11 @@
           <a class="btn btn-ghost" href="resume.html">下载 / 打印简历</a>
         </div>
         <div class="stats">
-          <div class="stat"><div class="n">15+</div><div class="l">自研 / 主导项目</div></div>
-          <div class="stat"><div class="n">3</div><div class="l">已上架 PyPI 包</div></div>
-          <div class="stat"><div class="n">5+</div><div class="l">年全栈经验</div></div>
+          <div class="stat"><div class="n" data-count="15" data-suffix="+">15+</div><div class="l">自研 / 主导项目</div></div>
+          <div class="stat"><div class="n" data-count="3" data-suffix="">3</div><div class="l">已上架 PyPI 包</div></div>
+          <div class="stat"><div class="n" data-count="5" data-suffix="+">5+</div><div class="l">年全栈经验</div></div>
         </div>
+        <div class="rotator" id="rotator"></div>
       </div>
       <aside class="avatar-card reveal">
         <div class="avatar">郑</div>
@@ -55,6 +61,10 @@
           <div><span>姓名</span><b>郑志能</b></div>
           <div><span>方向</span><b>认知 AI · 全栈</b></div>
           <div><span>城市</span><b>广东 · 佛山</b></div>
+          <div><span>微信</span><b class="wx">Zenojack</b></div>
+          <div><span>公众号</span><b>PASM 认知引擎</b></div>
+          <div><span>邮箱</span><b>625955122@qq.com</b></div>
+          <div><span>手机</span><b>136-7976-9132</b></div>
           <div><span>GitHub</span><b>arronJack</b></div>
           <div><span>Gitee</span><b>arronzheng</b></div>
           <div><span>ID</span><b style="color:var(--accent);letter-spacing:.5px">arron_zheng</b></div>
@@ -204,14 +214,19 @@
       <div class="contact-card reveal">
         <h2>一起把智能体做进产品</h2>
         <p>无论是全职机会、技术合作还是项目咨询，欢迎随时联系。简历与作品集可随时提供。</p>
-        <div class="scan-contact" style="justify-content:center;margin-top:6px">
+        <div class="contact-info">
+          <span class="contact-chip"><span class="k">邮箱</span> <a href="mailto:625955122@qq.com">625955122@qq.com</a></span>
+          <span class="contact-chip"><span class="k">手机</span> <a href="tel:13679769132">136-7976-9132</a></span>
+          <span class="contact-chip"><span class="k">微信</span> Zenojack</span>
+          <span class="contact-chip"><span class="k">公众号</span> PASM 认知引擎</span>
+          <span class="contact-chip"><a href="https://gitee.com/arronzheng" target="_blank" rel="noopener">Gitee ↗</a></span>
+          <span class="contact-chip"><a href="https://github.com/arronJack" target="_blank" rel="noopener">GitHub ↗</a></span>
+        </div>
+        <div class="scan-contact" style="justify-content:center">
           <img class="qr" src="assets/img/contact-qr.svg" alt="扫码联系郑志能" />
           <div class="qr-cap">
-            <b>扫码联系</b><br>
-            微信 / 相机扫一扫，直接保存我的名片<br>
-            <a href="https://gitee.com/arronzheng" target="_blank" rel="noopener">Gitee ↗</a>
-            &nbsp;·&nbsp;
-            <a href="https://github.com/arronJack" target="_blank" rel="noopener">GitHub ↗</a>
+            <b>扫码保存名片</b><br>
+            微信 / 相机扫一扫，直接存入通讯录
           </div>
         </div>
       </div>

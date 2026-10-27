@@ -43,6 +43,7 @@
       );
     }).join("");
     el.innerHTML = html;
+    stagger(el);
     observeReveal();
   }
 
@@ -63,6 +64,7 @@
         '<span class="more">阅读全文 →</span></a>';
     }).join("");
     el.innerHTML = html;
+    stagger(el);
     if (hasArticle) {
       el.querySelectorAll(".post[data-id]").forEach(function (node) {
         node.addEventListener("click", function () { showArticle(node.getAttribute("data-id")); });
@@ -117,6 +119,86 @@
     document.querySelectorAll(".reveal:not(.in)").forEach(function (n) { io.observe(n); });
   }
 
+  /* ---- 错落入场延迟 ---- */
+  function stagger(el) {
+    if (!el) return;
+    Array.prototype.forEach.call(el.children, function (c, i) {
+      c.style.transitionDelay = Math.min(i * 55, 360) + "ms";
+    });
+  }
+
+  /* ---- 渲染 CSDN 专栏 ---- */
+  function renderColumns(el) {
+    if (!el || !window.COLUMNS) return;
+    el.innerHTML = window.COLUMNS.map(function (c) {
+      return '<a class="column-card reveal" href="' + c.url + '" target="_blank" rel="noopener">' +
+        '<div class="cicon">' + c.icon + "</div>" +
+        "<div><h3>" + c.title + "</h3>" +
+        '<div class="cmeta">' + c.meta + "</div>" +
+        "<p>" + c.desc + "</p>" +
+        '<span class="more">前往专栏 →</span></div></a>';
+    }).join("");
+    stagger(el);
+    observeReveal();
+  }
+
+  /* ---- 数字滚动计数 ---- */
+  function countUp() {
+    document.querySelectorAll(".stat .n[data-count]").forEach(function (el) {
+      var target = parseInt(el.getAttribute("data-count"), 10) || 0;
+      var suffix = el.getAttribute("data-suffix") || "";
+      var dur = 1100, start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        var val = Math.floor((1 - Math.pow(1 - p, 3)) * target);
+        el.textContent = val + suffix;
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = target + suffix;
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  /* ---- Hero 指针光晕 ---- */
+  function heroGlow() {
+    var hero = document.querySelector(".hero");
+    if (!hero) return;
+    hero.addEventListener("mousemove", function (e) {
+      var r = hero.getBoundingClientRect();
+      hero.style.setProperty("--mx", (e.clientX - r.left) + "px");
+      hero.style.setProperty("--my", (e.clientY - r.top) + "px");
+    });
+  }
+
+  /* ---- 顶部滚动进度条 ---- */
+  function scrollProgress() {
+    var bar = document.getElementById("scrollProgress");
+    if (!bar) return;
+    function upd() {
+      var d = document.documentElement;
+      var max = d.scrollHeight - d.clientHeight;
+      var p = max > 0 ? ((d.scrollTop || document.body.scrollTop) / max) * 100 : 0;
+      bar.style.width = p + "%";
+    }
+    window.addEventListener("scroll", upd, { passive: true });
+    upd();
+  }
+
+  /* ---- 文字轮换 ---- */
+  function rotator() {
+    var el = document.getElementById("rotator");
+    if (!el) return;
+    var phrases = ["认知智能体架构", "全栈工程落地", "AI 产品从 0 到 1", "Python · Java · PHP"];
+    var i = 0;
+    function tick() {
+      el.innerHTML = '现可接：<span class="rk">' + phrases[i] + "</span>";
+      i = (i + 1) % phrases.length;
+    }
+    tick();
+    setInterval(tick, 2600);
+  }
+
   /* ---- 导航高亮 ---- */
   function navActive() {
     var id = location.pathname.split("/").pop().replace(".html", "") || "index";
@@ -128,7 +210,12 @@
   document.addEventListener("DOMContentLoaded", function () {
     renderProjects(document.getElementById("projects-grid"));
     renderPosts(document.getElementById("posts-grid"));
+    renderColumns(document.getElementById("columns-grid"));
     navActive();
+    countUp();
+    heroGlow();
+    scrollProgress();
+    rotator();
     observeReveal();
   });
 })();

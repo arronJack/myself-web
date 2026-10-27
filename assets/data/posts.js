@@ -103,3 +103,23 @@ window.POSTS = [
       '<p>顺手把<strong>软件著作权申请材料</strong>一次性整理齐：使用说明（HTML / PDF）、源程序鉴别材料、申请表填写模板。产品化和合规一起走，省得后面补。</p>'
   }
 ];
+
+/* CSDN 专栏 —— 后期新增专栏往这里加对象即可
+   url 暂时用 CSDN 搜索占位（可直接访问），请把 url 换成你的真实专栏地址
+*/
+window.COLUMNS = [
+  {
+    icon: "🐍",
+    title: "《python玩转AI》",
+    meta: "CSDN 专栏 · Python × AI 实战",
+    desc: "从环境搭建、数据处理到模型调用与智能体开发，用 Python 把 AI 真正玩起来：可复现的代码、踩坑笔记与工程化经验。",
+    url: "https://so.csdn.net/so/search?q=python%E7%8E%A9%E8%BD%ACAi"
+  },
+  {
+    icon: "🤖",
+    title: "《AI智能体实战从0到1：Manus等多平台与多智能体协同》",
+    meta: "CSDN 专栏 · 多智能体协同",
+    desc: "拆解 Manus 等多平台智能体的设计思路，讲清多智能体如何分工、编排、协同与自验证；结合 PASM 实战，带你从 0 到 1 造出能落地的智能体系统。",
+    url: "https://so.csdn.net/so/search?q=AI%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%9E%E6%88%98%E4%BB%8E0%E5%88%B01"
+  }
+];

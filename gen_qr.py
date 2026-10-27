@@ -9,7 +9,7 @@ TITLE:AI 产品 / 全栈工程师 · 认知智能体方向
 TEL;TYPE=CELL:+8613679769132
 EMAIL:625955122@qq.com
 URL:https://github.com/arronJack
-NOTE:扫码联系郑志能 · 认知智能体与全栈
+NOTE:微信 Zenojack · 公众号：PASM 认知引擎 · 扫码联系郑志能
 END:VCARD"""
 
 qr = qrcode.QRCode(
