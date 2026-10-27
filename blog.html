@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>博客 · 郑志能</title>
+  <meta name="description" content="郑志能的技术博客：认知智能体架构、本地大模型性能、AI 学习产品与工程实践。" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="logo">郑</span><span>郑志能</span></a>
+      <div class="nav-links">
+        <a href="index.html" data-page="index">首页</a>
+        <a href="resume.html" data-page="resume">简历</a>
+        <a href="projects.html" data-page="projects">项目</a>
+        <a href="blog.html" data-page="blog">博客</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" data-theme-toggle title="切换深色 / 浅色">🌗</button>
+        <a class="btn btn-primary" href="resume.html">查看简历</a>
+      </div>
+    </div>
+  </nav>
+
+  <section style="padding-top:64px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="kicker">Writing</div>
+        <h2>博客文章</h2>
+        <p>关于认知智能体架构、本地大模型性能、AI 学习产品与工程实践。点开任意一篇阅读完整正文。</p>
+      </div>
+      <div class="blog-grid" id="posts-grid"></div>
+      <article id="article" class="post-full-wrap" hidden></article>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 郑志能 · 技术博客</span>
+      <span><a href="index.html">返回首页 →</a></span>
+    </div>
+  </footer>
+
+  <script src="assets/data/projects.js"></script>
+  <script src="assets/data/posts.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

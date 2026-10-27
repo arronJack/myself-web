@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>郑志能 · 个人站点 | AI 产品 / 全栈工程师 / 独立开发者</title>
+  <meta name="description" content="郑志能的个人站点与在线简历：PASM 认知智能体引擎、PASM Studio、BlackWarrior、霖云智学等项目的作品集。" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- 导航 -->
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <span class="logo">郑</span>
+        <span>郑志能</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" data-page="index">首页</a>
+        <a href="resume.html" data-page="resume">简历</a>
+        <a href="projects.html" data-page="projects">项目</a>
+        <a href="blog.html" data-page="blog">博客</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" data-theme-toggle title="切换深色 / 浅色">🌗</button>
+        <a class="btn btn-primary" href="resume.html">查看简历</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">● 可接新机会 · 全栈 / AI 产品</span>
+        <h1>我是 <span class="grad">郑志能</span><br>把认知智能体做进真实产品</h1>
+        <p class="lead">
+          AI 产品 / 全栈工程师 / 独立开发者。从自研认知引擎 PASM，到桌面智能体、教育 SaaS 与量化系统，
+          擅长把“会思考、有记忆”的智能体落地为可发布、可运维的软件。
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href="projects.html">浏览项目 →</a>
+          <a class="btn btn-ghost" href="resume.html">下载 / 打印简历</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="n">15+</div><div class="l">自研 / 主导项目</div></div>
+          <div class="stat"><div class="n">3</div><div class="l">已上架 PyPI 包</div></div>
+          <div class="stat"><div class="n">5+</div><div class="l">年全栈经验</div></div>
+        </div>
+      </div>
+      <aside class="avatar-card reveal">
+        <div class="avatar">郑</div>
+        <div class="meta">
+          <div><span>姓名</span><b>郑志能</b></div>
+          <div><span>方向</span><b>认知 AI · 全栈</b></div>
+          <div><span>城市</span><b>中国 · 深圳</b></div>
+          <div><span>GitHub</span><b>arronJack</b></div>
+          <div><span>Gitee</span><b>arronzheng</b></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <!-- 关于 + 技能 -->
+  <section class="bg-soft" id="about">
+    <div class="wrap about-grid">
+      <div class="about reveal">
+        <div class="section-head">
+          <div class="kicker">About</div>
+          <h2>关于我</h2>
+        </div>
+        <p>我长期专注于 <strong>认知智能体（Cognitive Agent）</strong> 的工程化：不只是调一个大模型，
+        而是构建有记忆、有事实层、有世界模型、能自我验证的系统。PASM 是我投入最深的底座，
+        衍生出桌面工作室、客服、医疗、学习陪伴等一系列成品。</p>
+        <p>在 <strong>产品</strong> 与 <strong>工程</strong> 之间我能独立打通：需求拆解、架构设计、
+        桌面 / Web 前后端、打包分发、CI 与多平台发布都亲手做过。也乐于把重复工作沉淀为可复用的
+        技能、SDK 与脚手架，让团队“下载基座就能造自己的智能体”。</p>
+        <p>目前保持高频开源输出，并正在把多个内部项目（智创岛、学习网、居索平台等）持续打磨与重构。</p>
+      </div>
+      <div class="reveal">
+        <div class="skill-group">
+          <h4>核心能力</h4>
+          <div class="tags">
+            <span class="tag accent">认知架构</span>
+            <span class="tag accent">LLM 编排</span>
+            <span class="tag accent">RAG</span>
+            <span class="tag accent">智能体工程</span>
+            <span class="tag accent">MCP</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>工程栈</h4>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">PySide6</span>
+            <span class="tag">Spring Boot 3</span>
+            <span class="tag">Vue 3</span>
+            <span class="tag">Electron</span>
+            <span class="tag">WebGL</span>
+            <span class="tag">PostgreSQL</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>交付与运维</h4>
+          <div class="tags">
+            <span class="tag">PyInstaller</span>
+            <span class="tag">Inno Setup</span>
+            <span class="tag">CI / CD</span>
+            <span class="tag">PyPI 发布</span>
+            <span class="tag">多平台分发</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 精选项目 -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="kicker">Selected Work</div>
+        <h2>精选项目</h2>
+        <p>从认知引擎到行业应用，覆盖基座、产品与基础设施。完整清单见「项目」页。</p>
+      </div>
+      <div class="projects-grid" id="projects-grid" data-limit="6"></div>
+      <div style="text-align:center;margin-top:32px" class="reveal">
+        <a class="btn btn-ghost" href="projects.html">查看全部项目 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 履历时间线 -->
+  <section class="bg-soft" id="timeline">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="kicker">Track Record</div>
+        <h2>履历与里程碑</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="when">2024 — 至今</div>
+          <h4>PASM 认知智能体生态 · 主理人 / 全栈</h4>
+          <div class="org">独立开发与运营</div>
+          <ul>
+            <li>从零设计 PASM 认知引擎（记忆 / 事实 / 世界模型 / 规划 / 工具链），推进 V2.0（19 层认知栈）。</li>
+            <li>衍生 PASM Studio（小U）、BlackWarrior、pasm-agents、pasm-skills、pasm-framework 等，3 个包上架 PyPI。</li>
+            <li>完成 Gitee / GitHub / GitCode 三平台发布与自升级通道。</li>
+          </ul>
+        </div>
+        <div class="tl-item reveal">
+          <div class="when">2026</div>
+          <h4>霖云智学（AIstudy）· 架构与开发</h4>
+          <div class="org">多租户 AI 学习系统</div>
+          <ul>
+            <li>设计学生专属智能体、奥数进阶体系、考试预测（三源融合）等核心模块。</li>
+            <li>技术栈 Python/FastAPI + Vue3 + PostgreSQL。</li>
+          </ul>
+        </div>
+        <div class="tl-item reveal">
+          <div class="when">2025 — 2026</div>
+          <h4>行业智能体落地 · 医疗 / 客服 / 外接客户系统</h4>
+          <div class="org">pasm-medical / pasm-customer-service / pasm-omni</div>
+          <ul>
+            <li>医疗辅助（Spring Boot 3 + Vue3 + Python 认知 sidecar）。</li>
+            <li>反幻觉客服（相关性门控 + 校验），客诉自动转人工。</li>
+          </ul>
+        </div>
+        <div class="tl-item reveal">
+          <div class="when">持续</div>
+          <h4>创作平台 / 建站 / 量化系统</h4>
+          <div class="org">opc-platform · 墨构 Studio · 埃科建站 · 量化交易系统</div>
+          <ul>
+            <li>WebGL 无限画布 + DAG 执行层的创作平台。</li>
+            <li>多代演进的量化交易系统与回测优化。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 博客预览 -->
+  <section id="blog">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="kicker">Writing</div>
+        <h2>最近写的</h2>
+      </div>
+      <div class="blog-grid" id="posts-grid"></div>
+      <div style="text-align:center;margin-top:28px" class="reveal">
+        <a class="btn btn-ghost" href="blog.html">全部文章 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section class="bg-soft">
+    <div class="wrap">
+      <div class="contact-card reveal">
+        <h2>一起把智能体做进产品</h2>
+        <p>无论是全职机会、技术合作还是项目咨询，欢迎随时联系。简历与作品集可随时提供。</p>
+        <div class="scan-contact" style="justify-content:center;margin-top:6px">
+          <img class="qr" src="assets/img/contact-qr.svg" alt="扫码联系郑志能" />
+          <div class="qr-cap">
+            <b>扫码联系</b><br>
+            微信 / 相机扫一扫，直接保存我的名片<br>
+            <a href="https://gitee.com/arronzheng" target="_blank" rel="noopener">Gitee ↗</a>
+            &nbsp;·&nbsp;
+            <a href="https://github.com/arronJack" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 郑志能 · 个人站点与简历</span>
+      <span>Built with HTML / CSS / JS · 数据驱动，便于持续更新</span>
+    </div>
+  </footer>
+
+  <script src="assets/data/projects.js"></script>
+  <script src="assets/data/posts.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
