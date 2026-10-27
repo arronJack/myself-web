@@ -230,5 +230,41 @@ window.PROJECTS = [
     gitee: "",
     github: "",
     note: ""
+  },
+  {
+    name: "金管家 · 防伪溯源查询系统",
+    en: "jinguanjia",
+    icon: "🛡️",
+    badge: "prod",
+    badgeText: "产品 · SpringBoot+Vue",
+    desc: "面向企业的防伪溯源查询系统（已落地江西华硕陶瓷集团）：扫码/输入防伪码 → 展示产品信息；配套管理后台（添加产品、批量生成防伪码、二维码打印、查询留痕、系统配置）。Spring Boot 2.7.18 + MyBatis-Plus + MySQL8 + JWT，前端 Vue3 + Vite，后台 Vue3 + Vite + Element Plus，已配一键启动脚本与服务器部署说明。",
+    tech: ["Spring Boot 2.7.18", "MyBatis-Plus", "MySQL8", "JWT", "Vue3", "Vite", "Element Plus"],
+    gitee: "",
+    github: "",
+    note: ""
+  },
+  {
+    name: "YAKE WebChat 微信小程序",
+    en: "YAKE_webchat",
+    icon: "💬",
+    badge: "prod",
+    badgeText: "小程序 · SpringBoot",
+    desc: "微信小程序 + Spring Boot 后端的一体化小程序：含消费者小程序前端（project.config.json）、管理后台（admin-web）与商家端（seller-web），后端 Spring Boot 2.7.18 提供 API。",
+    tech: ["微信小程序", "Spring Boot 2.7.18", "Vue", "admin/seller 双后台"],
+    gitee: "",
+    github: "",
+    note: ""
+  },
+  {
+    name: "口播视频生成智能体技能包",
+    en: "digital-human-spokesperson",
+    icon: "🎬",
+    badge: "open",
+    badgeText: "智能体技能",
+    desc: "数字人/口播视频生成智能体技能包：输入文案即可生成口播视频（支持中英双语口播与字幕），含 SKILL.md、脚本、素材与参考，可打包上架 ClawHub 分发。",
+    tech: ["智能体", "数字人", "口播视频", "ClawHub"],
+    gitee: "",
+    github: "",
+    note: ""
   }
 ];
