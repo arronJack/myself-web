@@ -1,11 +1,11 @@
-# 郑志能 · 个人站点与在线简历
+# arron_zheng · 个人站点与在线简历
 
 > 纯静态、数据驱动的个人站点 + 在线简历。
 > 在线访问 👉 **https://arronjack.github.io/myself-web/**
 
 ## 关于我
 
-**郑志能**（ID：`arron_zheng`）· 广东佛山
+**arron_zheng**（ID：`arron_zheng`）· 广东佛山
 
 AI 产品 / 全栈工程师 / 独立开发者，专注**认知智能体（Cognitive Agent）**的工程化落地。
 从自研认知引擎 **PASM**，到桌面智能体、教育 SaaS、防伪溯源与量化系统，擅长把「会思考、有记忆」的智能体做成可发布、可运维的软件。
@@ -49,4 +49,4 @@ python3 -m http.server 8080
 
 ---
 
-© 2026 郑志能 · 个人站点与简历
+© 2026 arron_zheng · 个人站点与简历
