@@ -208,18 +208,6 @@ window.PROJECTS = [
     note: ""
   },
   {
-    name: "埃科机器人建站",
-    en: "designerPlatform-site",
-    icon: "🤖",
-    badge: "wip",
-    badgeText: "建站工具",
-    desc: "机器人建站平台 / 设计平台对外站点，降低非技术用户的站点搭建门槛。",
-    tech: ["建站", "自动化", "模板"],
-    gitee: "",
-    github: "",
-    note: ""
-  },
-  {
     name: "AgentMesh / pasm-mesh",
     en: "pasm-mesh",
     icon: "🕸️",
